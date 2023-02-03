@@ -11,10 +11,27 @@ console.log(flattening(arrays))
 
 
 // 3-2
+//value is the starting value that will be incremented/decremented
+//test is the condition statement
+//update is the incremental / decremental operation
+//body is whats to be done while the loop is looping
 
-export function loop(value, test, update, body) { //value is the start value, test is a function that returns a boolean, update returns a new value for next iteration, body logs it
-  for (let currentValue = value; test(currentValue); currentValue = update(currentValue)) {
-    body(currentValue);
+export function loop(value, test, update, body) { 
+  for (value; test(value); value = update(value)) {
+    body(value);
   }
 }
+
 loop(3, n => n > 0, n => n - 1, console.log);
+
+// 3-3
+
+function everyLoop(array, test) 
+{
+  // Your code here.
+}
+
+function everySome(array, test) 
+{
+//
+}
