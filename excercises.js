@@ -26,12 +26,25 @@ loop(3, n => n > 0, n => n - 1, console.log);
 
 // 3-3
 
-function everyLoop(array, test) 
-{
-  // Your code here.
+//3-3 everyLoop(array, test) and 3-4. everySome(array, test)
+
+//create loop and test conditions as well as iteration
+export function everyLoop(array, test) {
+  for (let i = 0; i < array.length; i++) {
+    if (!test(array[i])) {
+      return false;
+    }
+  }
+  return true;
 }
 
-function everySome(array, test) 
-{
-//
+export function everySome(array, test) {
+  return !array.some(element => !test(element));
 }
+
+console.log(everyLoop([1, 3, 5], n => n < 10));
+// → true
+console.log(everyLoop([2, 4, 16], n => n < 10));
+// → false
+console.log(everyLoop([], n => n < 10));
+// → true
